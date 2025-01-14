@@ -30,7 +30,6 @@ class Motorbike extends Vehicle {
     super(vin, color, make, model, year, weight, topSpeed);
 
     // initialize the specific properties of the Motorbike class
-    // TODO: figure out the motorcycle specifics other than the 2 wheel array
     // check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()];
@@ -59,10 +58,10 @@ class Motorbike extends Vehicle {
     console.log(`Top Speed: ${this.topSpeed} mph`);
     // Print details of the wheels
     console.log(
-      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+      `Front Wheel: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
     );
     console.log(
-      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+      `Rear Wheel: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
     );
   }
 }
