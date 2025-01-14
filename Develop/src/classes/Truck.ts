@@ -5,16 +5,10 @@ import Car from './Car.js';
 import Wheel from './Wheel.js';
 import AbleToTow from '../interfaces/AbleToTow.js';
 
-// TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
+// The Truck class extends the Vehicle class and implements the AbleToTow interface
 class Truck extends Vehicle implements AbleToTow {
   // Declare properties of the Truck class
-  vin: string;
-  color: string;
-  make: string;
-  model: string;
-  year: number;
-  weight: number;
-  topSpeed: number;
+  towingCapacity: number;
   wheels: Wheel[];
 
   // constructor that accepts the properties of the Truck class
@@ -27,10 +21,19 @@ class Truck extends Vehicle implements AbleToTow {
     weight: number,
     topSpeed: number,
     wheels: Wheel[],
+    towingCapacity: number,
   ) {
     // Call the constructor of the parent class, Vehicle
-    super();
+    super(vin, color, make, model, year, weight, topSpeed);
+    
+    //initialize the truck-specific properties
+    this.towingCapacity= towingCapacity;
 
+    if (wheels.length !== 4) {
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    } else {
+      this.wheels = wheels;
+    }
     // Override the printDetails method from the Vehicle class
     override printDetails(): void {
     // Call the printDetails method of the parent class, Vehicle
