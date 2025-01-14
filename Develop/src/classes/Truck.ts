@@ -7,14 +7,71 @@ import AbleToTow from '../interfaces/AbleToTow.js';
 
 // TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
 class Truck {
-  // TODO: Declare properties of the Truck class
-  // TODO: The properties should include vin, color, make, model, year, weight, top speed, wheels, and towing capacity
-  // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[]), towingCapacity (number)
+  // Declare properties of the Truck class
+  vin: string;
+  color: string;
+  make: string;
+  model: string;
+  year: number;
+  weight: number;
+  topSpeed: number;
+  wheels: Wheel[];
 
   // TODO: Create a constructor that accepts the properties of the Truck class
-    // TODO: The constructor should call the constructor of the parent class, Vehicle
-    // TODO: The constructor should initialize the properties of the Truck class
-    // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
+  constructor(
+    vin: string,
+    color: string,
+    make: string,
+    model: string,
+    year: number,
+    weight: number,
+    topSpeed: number,
+    wheels: Wheel[]
+  ) {
+    // Call the constructor of the parent class, Vehicle
+    super();
+
+    constructor(
+      vin: string,
+      color: string,
+      make: string,
+      model: string,
+      year: number,
+      weight: number,
+      topSpeed: number,
+      wheels: Wheel[]
+    ) {
+      // Call the constructor of the parent class, Vehicle
+      super();
+
+      // Override the printDetails method from the Vehicle class
+  override printDetails(): void {
+    // Call the printDetails method of the parent class, Vehicle
+    super.printDetails();
+
+    // Print details of the Truck class
+    console.log(`VIN: ${this.vin}`);
+    console.log(`Color: ${this.color}`);
+    console.log(`Make: ${this.make}`);
+    console.log(`Model: ${this.model}`);
+    console.log(`Year: ${this.year}`);
+    console.log(`Weight: ${this.weight} lbs`);
+    console.log(`Top Speed: ${this.topSpeed} mph`);
+
+    // Print details of the wheels
+    console.log(
+      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+    );
+  }
 
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
