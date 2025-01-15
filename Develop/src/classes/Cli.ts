@@ -4,8 +4,7 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
-import { log } from "console";
-import Vehicle from "./Vehicle.js";
+
 
 // define the Cli class
 class Cli {
